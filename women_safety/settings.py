@@ -47,7 +47,7 @@ AUTHENTICATION_BACKEND=[
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-     'whitenoise.middleware.WhiteNoiseMiddleware',  
+    'whitenoise.middleware.WhiteNoiseMiddleware',  
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -147,7 +147,7 @@ STATIC_URL = '/static/'
 # Directory where `collectstatic` will collect static files for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Since you don't have additional static files for development, STATICFILES_DIRS can be left empty
-STATICFILES_DIRS = []
-
-
+# If you're using a local static directory
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
